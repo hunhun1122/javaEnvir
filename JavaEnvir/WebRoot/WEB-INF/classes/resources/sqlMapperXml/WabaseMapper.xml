@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gwm.mapper.WabaseMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, yanglao1, yiliao1, shiye1, shengyu1, gongshang1, gongjijin1, yiwai1, zonghe1, yanglao2, yiliao2, shiye2, shengyu2, gognshang2, gongjijin2, yiwai2, zonghe2, zongheall
+	</sql>
+
+
+<select id="selectWabaseMapperlist" resultType="com.gwm.model.Wabase">
+        select
+        <include refid="Base_Column_List"/>
+        from Wabase
+        order by ${sort} ${order}
+    </select>
+</mapper>
